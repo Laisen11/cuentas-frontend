@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add new</h4>
+                    </div>
+                    <div class="card-body">
+                        <form *ngIf="form" [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="createDate" matInput placeholder="Create date">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="total" matInput placeholder="Total" type="text">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <mat-label>State</mat-label>
+                                        <select formControlName="pending" matNativeControl required>
+                                            <option [value]="1">Pending</option>
+                                            <option [value]="2">Paid</option>
+                                        </select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <mat-label>Providers</mat-label>
+                                        <select formControlName="idProvider" matNativeControl required>
+                                            <option *ngFor="let provider of providers"
+                                                    value="{{provider.id}}">{{provider.name}}
+                                            </option>
+                                        </select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button (click)="submit()"
+                                    class="btn btn-danger pull-right"
+                                    mat-raised-button
+                                    type="submit">
+                                Add
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

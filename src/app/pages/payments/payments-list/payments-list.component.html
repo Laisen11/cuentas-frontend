@@ -1,0 +1,64 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-danger pull-right" mat-raised-button routerLink="/payments/add" type="submit">
+                    Add new
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Payments</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let payment of payments">
+                                    <td>
+                                        {{payment.id}}
+                                    </td>
+                                    <td>
+                                        {{payment.amount | currency:'Q '}}
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <button (click)="delete(payment.id)"
+                                                    aria-label="Delete"
+                                                    class="mr-1"
+                                                    color="warn"
+                                                    mat-mini-fab>
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                            <button [routerLink]="[ '/payments',payment.id]"
+                                                    aria-label="EEdit"
+                                                    color="primary"
+                                                    mat-mini-fab>
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

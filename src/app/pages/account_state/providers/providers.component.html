@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Providers</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Nit
+                                </th>
+                                <th>
+                                    Total invoices
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let supplier of suppliers">
+                                    <td>
+                                        {{supplier.id}}
+                                    </td>
+                                    <td>
+                                        {{supplier.name}}
+                                    </td>
+                                    <td>
+                                        {{supplier.nit}}
+                                    </td>
+                                    <td>
+                                        {{getTotal(supplier.invoices) | currency:'Q '}}
+                                    </td>
+                                    <td>
+                                        <div *ngIf="supplier.invoices.length > 0" class="row">
+                                            <button [routerLink]="[ '/accounts/detail',supplier.id]"
+                                                    aria-label="Show"
+                                                    color="primary"
+                                                    mat-mini-fab>
+                                                <mat-icon>visibility</mat-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

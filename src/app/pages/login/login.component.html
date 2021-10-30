@@ -1,0 +1,41 @@
+<div class="col-12 ml-auto mr-auto">
+    <div class="d-flex flex-column flex-lg-row d-flex align-items-center align-content-center">
+        <div class="row d-flex flex-column ml-auto mr-auto">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title">Login</h4>
+                </div>
+                <div class="card-body p-5">
+                    <form *ngIf="form" [formGroup]="form">
+                        <div class="row">
+                            <div class="col-md-16">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="email"
+                                           matInput
+                                           placeholder="Email"
+                                           type="email">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-16">
+                                <mat-form-field class="example-full-width">
+                                    <input formControlName="password"
+                                           matInput
+                                           placeholder="Password"
+                                           type="password">
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <button (click)="submit()"
+                                class="btn btn-danger"
+                                mat-raised-button
+                                type="submit">
+                            Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

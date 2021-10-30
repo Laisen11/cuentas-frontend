@@ -1,0 +1,40 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Edit</h4>
+                    </div>
+                    <div class="card-body">
+                        <form *ngIf="form" [formGroup]="form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input formControlName="amount" matInput placeholder="Amount" type="number">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field>
+                                        <mat-label>Invoices</mat-label>
+                                        <select formControlName="idInvoice" matNativeControl required>
+                                            <option *ngFor="let invoice of invoices"
+                                                    value="{{invoice.id}}">{{invoice.createDate}}
+                                            </option>
+                                        </select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <button (click)="submit()"
+                                    class="btn btn-danger pull-right"
+                                    mat-raised-button
+                                    type="submit">
+                                Update
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

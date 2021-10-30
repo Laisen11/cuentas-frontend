@@ -1,0 +1,70 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-danger pull-right" mat-raised-button routerLink="/providers/add" type="submit">
+                    Add new
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Providers</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Nit
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let supplier of suppliers">
+                                    <td>
+                                        {{supplier.id}}
+                                    </td>
+                                    <td>
+                                        {{supplier.name}}
+                                    </td>
+                                    <td>
+                                        {{supplier.nit}}
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <button (click)="delete(supplier.id)"
+                                                    aria-label="Delete"
+                                                    class="mr-1"
+                                                    color="warn"
+                                                    mat-mini-fab>
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                            <button [routerLink]="[ '/providers',supplier.id]"
+                                                    aria-label="EEdit"
+                                                    color="primary"
+                                                    mat-mini-fab>
+                                                <mat-icon>edit</mat-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

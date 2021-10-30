@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Invoices</h4>
+                        <p class="card-category">{{total | currency:'Q '}}</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Create date
+                                </th>
+                                <th>
+                                    Total
+                                </th>
+                                <th>
+                                    Actions
+                                </th>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let invoice of invoices">
+                                    <td>
+                                        {{invoice.id}}
+                                    </td>
+                                    <td>
+                                        {{invoice.createDate}}
+                                    </td>
+                                    <td>
+                                        {{invoice.total | currency:'Q '}}
+                                    </td>
+                                    <td>
+                                        <div class="row">
+                                            <button [routerLink]="[ '/accounts/detail/payments',invoice.id]"
+                                                    aria-label="Show"
+                                                    color="primary"
+                                                    mat-mini-fab>
+                                                <mat-icon>visibility</mat-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

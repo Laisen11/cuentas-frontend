@@ -1,0 +1,25 @@
+<div class="logo">
+    <a class="simple-text" href="/">
+        <div class="logo-img">
+            <img src="/assets/img/angular2-logo-red.png"/>
+        </div>
+        Control
+    </a>
+</div>
+<div class="sidebar-wrapper">
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item" routerLinkActive="active">
+            <a [routerLink]="[menuItem.path]" class="nav-link">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+
+        <li (click)="logout()" class="nav-item">
+            <a class="nav-link">
+                <i class="material-icons">logout</i>
+                <p>Logout</p>
+            </a>
+        </li>
+    </ul>
+</div>
