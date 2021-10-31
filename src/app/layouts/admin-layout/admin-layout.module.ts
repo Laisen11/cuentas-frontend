@@ -23,6 +23,7 @@ import {ProvidersComponent} from '../../pages/account_state/providers/providers.
 import {InvoicesComponent} from '../../pages/account_state/invoices/invoices.component';
 import {PaymentsComponent} from '../../pages/account_state/payments/payments.component';
 import {BalanceComponent} from '../../pages/balance/balance.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
     imports: [
@@ -37,6 +38,7 @@ import {BalanceComponent} from '../../pages/balance/balance.component';
         MatSelectModule,
         MatTooltipModule,
         MatIconModule,
+        MatSnackBarModule,
     ],
     declarations: [
         ProvidersListComponent,

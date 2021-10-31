@@ -5,7 +5,9 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         <h4 class="card-title ">Payments</h4>
-                        <p class="card-category">{{total | currency:'Q '}}</p>
+                        <p *ngIf="invoice" class="card-category">{{invoice.total | currency:'Q '}}</p>
+                        <p class="card-category">{{total | currency:'Q '}} (-)</p>
+                        <p *ngIf="invoice" class="card-category">{{getBalance() | currency:'Q '}} (=)</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

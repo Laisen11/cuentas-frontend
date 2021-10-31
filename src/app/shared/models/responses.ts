@@ -12,6 +12,7 @@ export interface Invoice {
     total: number;
     pending: number;
     idProvider: number;
+    description: string;
     payments: Payment[];
 }
 

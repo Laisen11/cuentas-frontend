@@ -42,6 +42,7 @@ export class InvoicesEditComponent implements OnInit {
         invoice.total = this.form.value['total'];
         invoice.pending = this.form.value['pending'];
         invoice.idProvider = this.form.value['idProvider'];
+        invoice.description = this.form.value['description'];
 
         this.apiService.updateInvoices(this.id, invoice).subscribe((value) => {
             this.location.back()
@@ -55,6 +56,7 @@ export class InvoicesEditComponent implements OnInit {
                 total: [value.total, Validators.required],
                 pending: [value.pending, Validators.required],
                 idProvider: [value.idProvider, Validators.required],
+                description: [value.description, Validators.required],
             });
         });
     }

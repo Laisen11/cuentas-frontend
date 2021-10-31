@@ -29,6 +29,7 @@ export class InvoicesAddComponent implements OnInit {
                 total: ['', Validators.required],
                 pending: ['', Validators.required],
                 idProvider: ['', Validators.required],
+                description: ['', Validators.required],
             });
         });
     }
@@ -40,6 +41,7 @@ export class InvoicesAddComponent implements OnInit {
         invoice.total = this.form.value['total'];
         invoice.pending = this.form.value['pending'];
         invoice.idProvider = this.form.value['idProvider'];
+        invoice.description = this.form.value['description'];
 
         this.apiService.postInvoice(invoice).subscribe((value) => {
             if (value) {

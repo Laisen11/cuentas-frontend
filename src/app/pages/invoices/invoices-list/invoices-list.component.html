@@ -30,6 +30,9 @@
                                     State
                                 </th>
                                 <th>
+                                    Description
+                                </th>
+                                <th>
                                     Actions
                                 </th>
                                 </thead>
@@ -46,6 +49,9 @@
                                     </td>
                                     <td>
                                         {{invoice.pending == 1 ? 'Pending' : 'Paid'}}
+                                    </td>
+                                    <td>
+                                        {{invoice.description}}
                                     </td>
                                     <td>
                                         <div class="row">
